@@ -142,7 +142,7 @@ class Instance {
 
 	// Intersection functions and others
 	intersects(other) {
-		return other.x < this.x+this.w && other.y < me.y+this.h && 
+		return other.x < this.x+this.w && other.y < this.y+this.h && 
 			other.x+other.w > this.x && other.y+other.h > this.y;
 	}
 	intersectsPoint(x, y) {
