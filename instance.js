@@ -27,6 +27,8 @@ class Instance {
 		this.children = []; //SHOULD NOT BE SET outside this library, _internalParent must be set to null for each child removed
 		this._internalParent = null; //internal parent instance
 		this.name = this.className; //can be changed
+
+		window.addEventListener("resize", () => this.recalculateBounds()); //recalculate bounds when window resized
 	}
 	toString() {
 		return `"${this.name}" (${this.className})`;
