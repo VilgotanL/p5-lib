@@ -90,10 +90,11 @@ class Instance {
 		this.children.push(instance);
 	}
 	remove(instance) { //returns true if found, otherwise false, removes a child
-		let index = this.children.indexOf((child) => child === instance);
+		let index = this.children.indexOf(child);
 		if(index === -1) return false; //didnt find it
 		this.children.splice(index, 1); //remove it from children
 		instance._internalParent = null; //set parent of it to null
+		return true;
 	}
 	findFirstChild(name) { //find child by name
 		return this.children.find((child) => child.name === name);
